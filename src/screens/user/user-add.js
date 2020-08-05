@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import {useDispatch} from 'react-redux';
 import {Formik} from 'formik';
 import {userAdd} from '../../actions/user';
@@ -8,7 +8,7 @@ export const UserAddComponent = () => {
   const dispatch = useDispatch();
 
   return (
-    <>
+    <Fragment>
       <Formik
         initialValues={{users: ''}}
         onSubmit={(values) => dispatch(userAdd(values.users))}>
@@ -23,6 +23,6 @@ export const UserAddComponent = () => {
           </View>
         )}
       </Formik>
-    </>
+    </Fragment>
   );
 };
