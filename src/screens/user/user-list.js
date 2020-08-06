@@ -14,7 +14,7 @@ export const UserListComponent = () => {
         {users.length > 0 &&
           users.map((user, index) => (
             <View key={index}>
-              <Text onPress={() => navigation.navigate('UserDetails', {user})}>
+              <Text onPress={() => navigation.navigate('Details', {user})}>
                 {user}
               </Text>
             </View>
