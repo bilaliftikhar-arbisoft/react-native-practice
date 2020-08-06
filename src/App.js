@@ -1,16 +1,22 @@
-import React, {Fragment} from 'react';
+import 'react-native-gesture-handler';
+import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import {UserComponent, UserDetailsComponent} from './screens';
 
-import {UserComponent} from './screens';
-import {SafeAreaView, ScrollView} from 'react-native';
+const {Navigator, Screen} = createStackNavigator();
 
 export const App = () => {
   return (
-    <Fragment>
-      <SafeAreaView>
-        <ScrollView contentInsetAdjustmentBehavior="automatic">
-          <UserComponent />
-        </ScrollView>
-      </SafeAreaView>
-    </Fragment>
+    <NavigationContainer>
+      <Navigator initialRouteName="UserDetails">
+        <Screen name="Users" component={UserComponent} />
+        <Screen
+          name="UserDetails"
+          component={UserDetailsComponent}
+          options={{title: 'Details'}}
+        />
+      </Navigator>
+    </NavigationContainer>
   );
 };
