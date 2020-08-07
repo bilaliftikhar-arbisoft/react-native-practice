@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const Button = styled.Button``;
 export const TextInput = styled.TextInput``;
-export const View = styled.View`
+export const View = styled.View``;
+export const StyledView = styled.View`
   align-items: center;
   flex: 1;
   justify-content: center;
