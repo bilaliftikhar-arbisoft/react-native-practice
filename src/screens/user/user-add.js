@@ -2,7 +2,7 @@ import React, {Fragment} from 'react';
 import {useDispatch} from 'react-redux';
 import {Formik} from 'formik';
 import {userAdd} from '../../actions/user';
-import {View, Button, TextInput} from './styled';
+import {View, StyledButton, StyledTextInput} from './styled';
 
 export const UserAddComponent = () => {
   const dispatch = useDispatch();
@@ -14,12 +14,15 @@ export const UserAddComponent = () => {
         onSubmit={(values) => dispatch(userAdd(values.users))}>
         {({handleChange, handleBlur, handleSubmit, values}) => (
           <View>
-            <TextInput
+            <StyledTextInput
               onChangeText={handleChange('users')}
               onBlur={handleBlur('users')}
               value={values.users}
+              placeholder="Enter User name"
             />
-            <Button onPress={handleSubmit} title="Submit" />
+            <StyledButton onPress={handleSubmit} mode="contained">
+              jfdk
+            </StyledButton>
           </View>
         )}
       </Formik>

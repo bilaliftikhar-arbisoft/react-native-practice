@@ -1,7 +1,10 @@
 import styled from 'styled-components';
+import {Button, TextInput} from 'react-native-paper';
 
-export const Button = styled.Button``;
-export const TextInput = styled.TextInput``;
+export const StyledButton = styled(Button)`
+  margin-top: 1%;
+`;
+export const StyledTextInput = styled(TextInput)``;
 export const View = styled.View``;
 export const StyledView = styled.View`
   align-items: center;
