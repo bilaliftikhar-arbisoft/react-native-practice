@@ -11,6 +11,10 @@ export const UserDetailsComponent = ({route, navigation}) => {
         title="Go to Users"
         onPress={() => navigation.navigate('Users')}
       />
+      <Button
+        title="Go to Notifications"
+        onPress={() => navigation.navigate('Notification')}
+      />
     </StyledView>
   );
 };
