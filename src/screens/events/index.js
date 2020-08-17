@@ -1,8 +1,8 @@
 import React from 'react';
 import {View, Text} from './styled';
 
-export const ContactScreen = ({navigation}) => (
+export const EventScreen = () => (
   <View>
-    <Text>Contact screen</Text>
+    <Text>Events</Text>
   </View>
 );
