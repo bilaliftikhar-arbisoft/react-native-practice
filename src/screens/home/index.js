@@ -1,12 +1,13 @@
 import React from 'react';
-import {View, Text} from './styled';
+import {SafeAreaView} from 'react-native';
 
-export const HomeComponent = ({navigation}) => (
-  <View>
-    <Text>Home</Text>
-    {/* <Button
-      title="Go to User Details"
-      onPress={() => navigation.navigate('Details')}
-    /> */}
-  </View>
-);
+import {style} from './styled';
+import {Feed} from '../';
+
+export const HomeComponent = () => {
+  return (
+    <SafeAreaView style={style}>
+      <Feed />
+    </SafeAreaView>
+  );
+};
