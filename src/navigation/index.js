@@ -9,10 +9,10 @@ import {
   PARENT_GROUP_ROUTE,
   PARENT_EVENET_ROUTE,
 } from '../constants/navigation';
-import {SettingsScreen, EventScreen} from '../screens';
+import {SettingsScreen, EventScreen, ProfileScreen} from '../screens';
 import {HomeBottomTabScreen} from '../screens/home/navigation/bottomTab';
-import {ProfileStack} from '../screens/profile/navigation';
 import {GroupTabsScreen} from '../screens/groups/navigation/top-tab';
+import { ProfileStack } from '../screens/profile/navigation';
 const {Navigator, Screen} = createDrawerNavigator();
 
 export const Navigation = () => (

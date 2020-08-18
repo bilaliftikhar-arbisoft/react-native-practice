@@ -1,12 +1,61 @@
-import React from 'react';
-import {View, Text} from './styled';
+import React, {useRef} from 'react';
+import {FlatList} from 'react-native-gesture-handler';
+import {SafeAreaView} from 'react-native';
+import {PARENT_PROFILE_ROUTE} from '../../constants/navigation';
+import {useScrollToTop, useNavigation} from '@react-navigation/native';
+import {users} from '../../assets/dummy-data';
+import {
+  style,
+  StyledActions,
+  StyledCard,
+  StyledButton,
+  StyledContent,
+  StyledCover,
+  StyledParagraph,
+  StyledTitle,
+} from './styled';
 
-export const HomeComponent = ({navigation}) => (
-  <View>
-    <Text>Home</Text>
-    {/* <Button
-      title="Go to User Details"
-      onPress={() => navigation.navigate('Details')}
-    /> */}
-  </View>
-);
+const Feed = () => {
+  const navigation = useNavigation();
+  const ref = useRef();
+  useScrollToTop(ref);
+
+  const renderFeed = ({item}) => (
+    <StyledCard>
+      <StyledCover source={{uri: 'https://picsum.photos/700'}} />
+      <StyledContent>
+        <StyledTitle
+          onPress={() =>
+            navigation.navigate(PARENT_PROFILE_ROUTE, {
+              screen: PARENT_PROFILE_ROUTE,
+              params: {item},
+            })
+          }>
+          {item.first_name + '  ' + item.last_name}
+        </StyledTitle>
+        <StyledParagraph>{item.email}</StyledParagraph>
+      </StyledContent>
+      <StyledActions>
+        <StyledButton mode="contained">Follow</StyledButton>
+        <StyledButton mode="outlined">Block</StyledButton>
+      </StyledActions>
+    </StyledCard>
+  );
+
+  return (
+    <FlatList
+      ref={ref}
+      data={users}
+      renderItem={renderFeed}
+      keyExtractor={(user) => user.id}
+    />
+  );
+};
+
+export const HomeComponent = () => {
+  return (
+    <SafeAreaView style={style}>
+      <Feed />
+    </SafeAreaView>
+  );
+};
