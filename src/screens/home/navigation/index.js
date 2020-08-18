@@ -1,1 +1,1 @@
-export {HomeDrawerScreen} from './drawer';
+export {HomeBottomTabScreen} from './bottomTab';

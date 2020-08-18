@@ -1,12 +1,12 @@
 import React from 'react';
-import {View, Text, Button} from './styled';
+import {View, Text} from './styled';
 
 export const HomeComponent = ({navigation}) => (
   <View>
-    <Text>Home screen</Text>
-    <Button
+    <Text>Home</Text>
+    {/* <Button
       title="Go to User Details"
       onPress={() => navigation.navigate('Details')}
-    />
+    /> */}
   </View>
 );

@@ -1,8 +1,8 @@
 import React from 'react';
 import {View, Text} from './styled';
 
-export const NotificationScreen = ({navigation}) => (
+export const MyNetworkScreen = () => (
   <View>
-    <Text>Notifications</Text>
+    <Text>Networks</Text>
   </View>
 );

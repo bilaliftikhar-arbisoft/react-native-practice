@@ -1,8 +1,8 @@
 import React from 'react';
 import {View, Text} from './styled';
 
-export const RequestScreen = ({navigation}) => (
+export const PostScreen = ({navigation}) => (
   <View>
-    <Text>Request screen</Text>
+    <Text>Posts</Text>
   </View>
 );
