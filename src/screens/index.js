@@ -7,3 +7,4 @@ export {EventScreen} from './events';
 export {SettingsScreen} from './settings';
 export {ProfileScreen} from './profile';
 export {GroupScreen} from './groups';
+export {Feed} from './feed';
