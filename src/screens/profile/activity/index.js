@@ -1,6 +1,6 @@
 import React from 'react';
-// import {FlatList} from 'react-native-gesture-handler';
 import {useRoute} from '@react-navigation/native';
+import {FlatList} from 'react-native';
 import {
   StyledCard,
   StyledContent,
@@ -15,14 +15,13 @@ export const Activity = () => {
     <StyledCard>
       <StyledContent>
         <StyledTitle>Activity</StyledTitle>
-        {/* <FlatList
-        data={activity}
-        renderItem={({item}) => <StyledParagraph>{item.name}</StyledParagraph>}
-        keyExtractor={(activity) => activity.id}
-      /> */}
-        {activity.map(({name, id}) => (
-          <StyledParagraph key={id}>{name}</StyledParagraph>
-        ))}
+        <FlatList
+          data={activity}
+          renderItem={({item}) => (
+            <StyledParagraph>{item.name}</StyledParagraph>
+          )}
+          keyExtractor={(activity) => activity.id}
+        />
       </StyledContent>
       <StyledContent />
     </StyledCard>
